@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App6Yao.ShowPage"
+             Title="ShowPage">
+
+    <ContentPage.Resources>
+        <Style x:Key="WinStyle" TargetType="Label">
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+            <!-- 添加更多的样式设置 -->
+        </Style>
+     
+    </ContentPage.Resources>
+   <ScrollView>
+        <Frame BorderColor="#d0ad9a"   BackgroundColor="#f5f5f5" Padding="1"
+       CornerRadius="0">
+            <AbsoluteLayout>
+
+
+
+
+       
+                        <HorizontalStackLayout   AbsoluteLayout.LayoutBounds="0.5,0,0.09,0.09"
+                 AbsoluteLayout.LayoutFlags="All"  Margin="0,20,0,0">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30"></ColumnDefinition>
+                            <ColumnDefinition Width="auto"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="tj.png" WidthRequest="35" HeightRequest="35" Margin="0,-7,25,0"  ></Image>
+                        <Label TextType="Text" Text="六爻排盘" FontSize="30" FontAttributes="Bold" Grid.Column="1"  />
+                    </Grid>
+
+
+                </HorizontalStackLayout>
+                <Line X1="0" Y1="0" X2="{Binding Source={x:Reference myFrame}, Path=Width}" Y2="0" Stroke="#d0ad9a" StrokeDashArray="2 2" StrokeThickness="1"
+                       AbsoluteLayout.LayoutBounds="0.5,0.5,0.95,0.9" Margin="0,20,0,20"
+               AbsoluteLayout.LayoutFlags="All" 
+                    />
+                
+         
+                <Frame x:Name="myFrame"
+     
+                       AbsoluteLayout.LayoutBounds="0.5,0.6,0.95,0.85"
+               AbsoluteLayout.LayoutFlags="All" >
+                    <AbsoluteLayout>
+
+                        <Image
+                Source="mc1.png"
+                     AbsoluteLayout.LayoutBounds="0,0,22,22"
+                 AbsoluteLayout.LayoutFlags="PositionProportional"    
+               
+                 />
+                        <Image
+                Source="mc2.png"
+                     AbsoluteLayout.LayoutBounds="1,0,22,22"
+                 AbsoluteLayout.LayoutFlags="PositionProportional"    
+               
+                 />
+
+                        <Image
+                Source="mc3.png"
+                     AbsoluteLayout.LayoutBounds="0,1,22,22"
+                 AbsoluteLayout.LayoutFlags="PositionProportional"    
+               
+                 />
+                        <Image
+                Source="mc4.png"
+                     AbsoluteLayout.LayoutBounds="1,1,22,22"
+                 AbsoluteLayout.LayoutFlags="PositionProportional"    
+               
+                 />
+
+
+                        <StackLayout  Orientation="Vertical" HorizontalOptions="Fill"   AbsoluteLayout.LayoutBounds="0.5,0.5,0.95,1"
+               AbsoluteLayout.LayoutFlags="All"  >
+                            <ScrollView HeightRequest="800"  BackgroundColor="Transparent" Background="Transparent" VerticalScrollBarVisibility="Never">
+                                <Grid Margin="10,40,10,0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="210"></RowDefinition>
+                                    <RowDefinition Height="180"></RowDefinition>
+                                    <RowDefinition Height="auto"></RowDefinition>
+                                    <RowDefinition Height="110"></RowDefinition>
+                                    <RowDefinition Height="70"></RowDefinition>
+                                  
+                                </Grid.RowDefinitions>
+        <StackLayout Orientation="Vertical" >
+            <StackLayout Orientation="Horizontal">
+                <Image Source="icon.png" WidthRequest="24" HeightRequest="20" />
+                <Label Text="当前信息" x:Name="l1" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold"  FontSize="Body" TextColor="Black"/>
+            </StackLayout>
+            <BoxView  Color="#d4b993" HeightRequest="1" HorizontalOptions="Fill"  ></BoxView>
+            <Grid Margin="0,10" RowSpacing="0" ColumnSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="26" />
+                    <RowDefinition Height="26" />
+                    <RowDefinition Height="26" />
+                    <RowDefinition Height="26" />
+                    <RowDefinition Height="26" />
+                    <RowDefinition Height="26" />
+                    <RowDefinition Height="20" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50" />
+                    <ColumnDefinition Width="20" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+
+                <Label Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Text="所占何事：" FontAttributes="Bold"  TextColor="#8a492e" FontSize = "13" ></Label>
+                <Label Grid.Column="2" Grid.Row="0"  Grid.ColumnSpan="7" Text=""  FontSize = "13" x:Name="Szhs" HorizontalOptions="StartAndExpand"></Label>
+
+                <Label Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Text="起卦方式：" FontAttributes="Bold"  TextColor="#8a492e" FontSize = "13" ></Label>
+                <Label Grid.Column="2" Grid.Row="1"  Grid.ColumnSpan="2" Text="电脑自动"  FontSize = "13" x:Name="QiGuaFs"></Label>
+                <Label Grid.Column="4" Grid.Row="1"  Grid.ColumnSpan="2" Text="卦身：" FontAttributes="Bold"  TextColor="#8a492e" FontSize = "13" ></Label>
+                <Label x:Name="gushen"  Grid.Column="5" Grid.Row="1" Text=""  FontSize = "13" ></Label>
+
+                <Label Grid.Column="0" Grid.Row="2"  Text="排卦：" FontAttributes="Bold"  TextColor="#8a492e" FontSize = "13" ></Label>
+                <Label Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="7"  Text="易阳子六爻在线排盘系统 www.yyzfs.ren"  FontSize = "13" ></Label>
+
+                <Label Grid.Column="0" Grid.Row="3"  Text="公历：" FontAttributes="Bold"  TextColor="#8a492e" FontSize = "13"  ></Label>
+                <Label Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="6"  Text="2021年12月22日11时 "  FontSize = "13" x:Name="Qgdate"></Label>
+                <Label  Grid.Column="0" Grid.Row="4"  Text="农历：" FontAttributes="Bold"  TextColor="#8a492e" FontSize = "13" ></Label>
+                <Label x:Name="ChineseString" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="6"  Text="二〇二一年冬月十九日11时"  FontSize = "13" ></Label>
+
+                <Label Grid.Column="0" Grid.Row="5"  Text="神煞：" FontAttributes="Bold"  TextColor="#8a492e" FontSize = "13" ></Label>
+                <Label Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="7"  x:Name="Shengsha" Text=""  FontSize = "13" ></Label>
+
+                <Label  Grid.Column="0" Grid.Row="6"  Text="干支：" FontAttributes="Bold"  TextColor="#8a492e" FontSize = "13" ></Label>
+                <Label x:Name="GanZhi" Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="5"  Text=""  FontSize = "13" TextType="Html" ></Label>
+                <Label Grid.Column="6" Grid.Row="6"  Text="日空:" FontAttributes="Bold"  TextColor="#8a492e" FontSize = "13" ></Label>
+                <Label x:Name="xk" Grid.Column="7" Grid.Row="6" Grid.ColumnSpan="3"  Text=""  FontSize = "13" ></Label>
+
+            </Grid>
+        </StackLayout>
+
+                                    <StackLayout Orientation="Vertical" Margin="0,10,0,0" HorizontalOptions="Fill" Grid.Row="1">
+            <StackLayout Orientation="Horizontal">
+                <Image Source="icon.png" WidthRequest="24" HeightRequest="20" />
+                <Label Text="六爻卦盘" x:Name="l2" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold"  FontSize="Body" TextColor="Black"/>
+            </StackLayout>
+            <BoxView  Color="#d4b993" HeightRequest="1" HorizontalOptions="Fill"  ></BoxView>
+            <Grid Margin="8,10" RowSpacing="0" ColumnSpacing="3" x:Name="gridgua" HorizontalOptions="Fill"  >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="20" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="auto"  />
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="auto" />
+
+
+
+                </Grid.ColumnDefinitions>
+                <Label Text="六神" Grid.Column="0" FontAttributes="Bold" FontSize="10" TextColor="Black"></Label>
+                <Label Text=" 伏　神" Grid.Column="1"  FontAttributes="Bold" FontSize="10" TextColor="Black"></Label>
+                <Label Text="地雷复（坤-六合）" x:Name="zguName"  Grid.Column="2"   FontAttributes="Bold" FontSize="10" TextColor="Black"></Label>
+                <Label Text="" Grid.Column="3" FontAttributes="Bold" FontSize="10" TextColor="Black"></Label>
+                <Label Text="" Grid.Column="4"  FontAttributes="Bold" FontSize="10" TextColor="Black"></Label>
+                <Label Text="" x:Name="BzguName" Grid.Column="5"  FontAttributes="Bold" FontSize="10" TextColor="Black"></Label>
+                <Label Text="" Grid.Column="6" FontAttributes="Bold" FontSize="10" TextColor="Black"></Label>
+                <Label Text="" Grid.Column="7"  FontAttributes="Bold" FontSize="10" TextColor="Black"></Label>
+
+
+                <Label Text="青龙" x:Name="ShengShou6" Grid.Column="0" Grid.Row="1" FontSize="9" TextColor="Black"></Label>
+                <Label Text="玄武" x:Name="ShengShou5" Grid.Column="0" Grid.Row="2" FontSize="9" TextColor="Black"></Label>
+                <Label Text="白虎" x:Name="ShengShou4" Grid.Column="0" Grid.Row="3" FontSize="9" TextColor="Black"></Label>
+                <Label Text="腾蛇" x:Name="ShengShou3" Grid.Column="0" Grid.Row="4" FontSize="9" TextColor="Black"></Label>
+                <Label Text="勾陈" x:Name="ShengShou2" Grid.Column="0" Grid.Row="5" FontSize="9" TextColor="Black"></Label>
+                <Label Text="朱雀" x:Name="ShengShou1" Grid.Column="0" Grid.Row="6" FontSize="9" TextColor="Black"></Label>
+
+                <!--伏　神-->
+                <Label Text="" x:Name="fusheng6" Grid.Column="1" Grid.Row="1" FontSize="9" TextColor="Black"  ></Label>
+                <Label Text="" x:Name="fusheng5" Grid.Column="1" Grid.Row="2" FontSize="9" TextColor="Black"  ></Label>
+                <Label Text="" x:Name="fusheng4" Grid.Column="1" Grid.Row="3" FontSize="9" TextColor="Black"  ></Label>
+                <Label Text="" x:Name="fusheng3" Grid.Column="1" Grid.Row="4" FontSize="9" TextColor="Black"  ></Label>
+                <Label Text="" x:Name="fusheng2" Grid.Column="1" Grid.Row="5" FontSize="9" TextColor="Black"  ></Label>
+                <Label Text="" x:Name="fusheng1" Grid.Column="1" Grid.Row="6" FontSize="9" TextColor="Black"  ></Label>
+                <!--主卦-->
+                <StackLayout Grid.Column="2" Grid.Row="1"  Orientation="Horizontal">
+                    <Label Text="▅▅▅▅▅"    x:Name="zyao6"  FontSize="9" TextColor="Black"></Label>
+                    <Label Text="子孙癸酉金"  x:Name="Najia6" FontSize="9" TextColor="Black" ></Label>
+                </StackLayout>
+                <StackLayout Grid.Column="2" Grid.Row="2"  Orientation="Horizontal">
+                    <Label Text="▅▅▅▅▅"   x:Name="zyao5"   FontSize="9" TextColor="Black"></Label>
+                    <Label Text="子孙癸酉金"  x:Name="Najia5" FontSize="9" TextColor="Black" ></Label>
+                </StackLayout>
+                <StackLayout Grid.Column="2" Grid.Row="3"  Orientation="Horizontal">
+                    <Label Text="▅▅  ▅▅"   x:Name="zyao4"   FontSize="9" TextColor="Black"></Label>
+                    <Label Text="子孙癸酉金" x:Name="Najia4" FontSize="9" TextColor="Black" ></Label>
+                </StackLayout>
+                <StackLayout Grid.Column="2" Grid.Row="4"  Orientation="Horizontal">
+                    <Label Text="▅▅▅▅▅"   x:Name="zyao3"   FontSize="9" TextColor="Black"></Label>
+                    <Label Text="子孙癸酉金" x:Name="Najia3" FontSize="9" TextColor="Black" ></Label>
+                </StackLayout>
+                <StackLayout Grid.Column="2" Grid.Row="5"  Orientation="Horizontal">
+                    <Label Text="▅▅▅▅▅"  x:Name="zyao2"    FontSize="9" TextColor="Black"></Label>
+                    <Label Text="子孙癸酉金" x:Name="Najia2"  FontSize="9" TextColor="Black" ></Label>
+                </StackLayout>
+                <StackLayout Grid.Column="2" Grid.Row="6"  Orientation="Horizontal">
+                    <Label Text="▅▅▅▅▅"  x:Name="zyao1"    FontSize="9" TextColor="Black"></Label>
+                    <Label Text="子孙癸酉金" x:Name="Najia1" FontSize="9" TextColor="Black" ></Label>
+                </StackLayout>
+
+                <!--世应 动-->
+                <Label Text="" x:Name="Zgusy6"  Grid.Column="3" Grid.Row="1" FontSize="9" TextColor="Black" ></Label>
+                <Label Text="" x:Name="Zgusy5"  Grid.Column="3" Grid.Row="2" FontSize="9" TextColor="Black" ></Label>
+                <Label Text="" x:Name="Zgusy4"  Grid.Column="3" Grid.Row="3" FontSize="9" TextColor="Black" ></Label>
+                <Label Text="" x:Name="Zgusy3"  Grid.Column="3" Grid.Row="4" FontSize="9" TextColor="Black" ></Label>
+                <Label Text="" x:Name="Zgusy2"  Grid.Column="3" Grid.Row="5" FontSize="9" TextColor="Black" ></Label>
+                <Label Text="" x:Name="Zgusy1"  Grid.Column="3" Grid.Row="6" FontSize="9" TextColor="Black" ></Label>
+
+
+
+
+                <Label Text="" x:Name="dyao6"  Grid.Column="4" Grid.Row="1" FontSize="9" TextColor="Black" ></Label>
+                <Label Text="" x:Name="dyao5"  Grid.Column="4" Grid.Row="2" FontSize="9" TextColor="Black" ></Label>
+                <Label Text=""  x:Name="dyao4" Grid.Column="4" Grid.Row="3" FontSize="9" TextColor="Black" ></Label>
+                <Label Text="" x:Name="dyao3"  Grid.Column="4" Grid.Row="4" FontSize="9" TextColor="Black" ></Label>
+                <Label Text="" x:Name="dyao2"  Grid.Column="4" Grid.Row="5" FontSize="9" TextColor="Black" ></Label>
+                <Label Text=""  x:Name="dyao1" Grid.Column="4" Grid.Row="6" FontSize="9" TextColor="Black" ></Label>
+
+                <!--变卦-->
+                <StackLayout Grid.Column="5" Grid.Row="1"  Orientation="Horizontal">
+                    <Label Text=""   x:Name="byao6"   FontSize="9" TextColor="Black"></Label>
+                    <Label Text="" x:Name="bNajia6" FontSize="9" TextColor="Black" ></Label>
+                </StackLayout>
+                <StackLayout Grid.Column="5" Grid.Row="2"  Orientation="Horizontal">
+                    <Label Text=""    x:Name="byao5"    FontSize="9" TextColor="Black"></Label>
+                    <Label Text="" x:Name="bNajia5" FontSize="9" TextColor="Black" ></Label>
+                </StackLayout>
+                <StackLayout Grid.Column="5" Grid.Row="3"  Orientation="Horizontal">
+                    <Label Text=""    x:Name="byao4"    FontSize="9" TextColor="Black"></Label>
+                    <Label Text="" x:Name="bNajia4" FontSize="9" TextColor="Black" ></Label>
+                </StackLayout>
+                <StackLayout Grid.Column="5" Grid.Row="4"  Orientation="Horizontal">
+                    <Label Text=""    x:Name="byao3"    FontSize="9" TextColor="Black"></Label>
+                    <Label Text="" x:Name="bNajia3" FontSize="9" TextColor="Black" ></Label>
+                </StackLayout>
+                <StackLayout Grid.Column="5" Grid.Row="5"  Orientation="Horizontal">
+                    <Label Text=""   x:Name="byao2"     FontSize="9" TextColor="Black"></Label>
+                    <Label Text="" x:Name="bNajia2" FontSize="9" TextColor="Black" ></Label>
+                </StackLayout>
+                <StackLayout Grid.Column="5" Grid.Row="6"  Orientation="Horizontal">
+                    <Label Text=""    x:Name="byao1"    FontSize="9" TextColor="Black"></Label>
+                    <Label Text="" x:Name="bNajia1" FontSize="9" TextColor="Black" ></Label>
+                </StackLayout>
+
+
+
+
+                <Label Text="" x:Name="Bgusy6"  Grid.Column="6" Grid.Row="1" FontSize="9" TextColor="Black" ></Label>
+                <Label Text="" x:Name="Bgusy5"  Grid.Column="6" Grid.Row="2" FontSize="9" TextColor="Black" ></Label>
+                <Label Text="" x:Name="Bgusy4"  Grid.Column="6" Grid.Row="3" FontSize="9" TextColor="Black" ></Label>
+                <Label Text="" x:Name="Bgusy3"  Grid.Column="6" Grid.Row="4" FontSize="9" TextColor="Black" ></Label>
+                <Label Text=""  x:Name="Bgusy2"  Grid.Column="6" Grid.Row="5" FontSize="9" TextColor="Black" ></Label>
+                <Label Text="" x:Name="Bgusy1"  Grid.Column="6" Grid.Row="6" FontSize="9" TextColor="Black" ></Label>
+
+            </Grid>
+        </StackLayout>
+
+                                    <StackLayout Orientation="Vertical" Grid.Row="2" Margin="0,10,0,0">
+            <StackLayout Orientation="Horizontal">
+                <Image Source="icon.png"  WidthRequest="24" HeightRequest="20"/>
+                                            <Label Text="周易爻辞"  HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold"  FontSize="Body" TextColor="Black"/>
+                                        </StackLayout>
+                                        <BoxView  Color="#d4b993" HeightRequest="1" HorizontalOptions="Fill"  ></BoxView>
+                                        <StackLayout Spacing="0" Padding="0,8,0,0"  >
+                                      
+
+                                                <Label x:Name="HtmlMsg"  TextType="Html"  />
+                                          
+                                        </StackLayout>
+
+                                </StackLayout>
+
+           <StackLayout Orientation="Vertical" Grid.Row="3" Margin="0,10,0,0">
+            <StackLayout Orientation="Horizontal">
+                <Image Source="icon.png"  WidthRequest="24" HeightRequest="20" />
+                <Label Text="周易爻辞" x:Name="l4" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold"  FontSize="Body" TextColor="Black"/>
+
+            </StackLayout>
+            <BoxView  Color="#d4b993" HeightRequest="1" HorizontalOptions="Fill"  ></BoxView>
+                                        <StackLayout Spacing="0" Padding="0,8,0,0">
+                           
+                               
+                                <Label x:Name="LabMsg"  />
+                            
+                        </StackLayout>
+                    </StackLayout>
+
+                                <StackLayout  Grid.Row="4">
+            <Grid Margin="0,16" HorizontalOptions="CenterAndExpand" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="42" />
+
+
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="70" />
+                    <ColumnDefinition Width="130"  />
+                    <ColumnDefinition Width="30"  />
+                    <ColumnDefinition Width="120" />
+
+
+
+                </Grid.ColumnDefinitions>
+                <ImageButton  Source="Save1.png"      BackgroundColor="#fffcf5" />
+
+                <Button Grid.Column="1" Grid.Row="0"   Text="问卦师"  TextColor="Black" FontSize="20" FontAttributes="Bold"    CornerRadius="10" BackgroundColor="#FF991E" />
+                <Button Grid.Column="3" Grid.Row="0"   Text="重新排盘"  TextColor="Black" FontSize="20" FontAttributes="Bold"    CornerRadius="10" BackgroundColor="#FF991E" />
+            </Grid>
+        </StackLayout>
+                            
+                            
+                            </Grid>
+                            </ScrollView>
+
+                        </StackLayout>
+                     
+
+                    </AbsoluteLayout>
+
+                </Frame>
+          
+        </AbsoluteLayout>
+
+        </Frame>
+
+    </ScrollView>
+
+</ContentPage>

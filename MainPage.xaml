@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:local="clr-namespace:App6Yao"
+             x:Class="App6Yao.MainPage"  >
+    <ContentPage.Content>
+        <ScrollView>
+        <Frame BorderColor="#d0ad9a"   BackgroundColor="#fffcf5" Padding="1"
+       CornerRadius="0">
+            <AbsoluteLayout>
+          
+                <Image
+                Source="topl.png"
+                  AbsoluteLayout.LayoutBounds="0,0,41,40"
+                 AbsoluteLayout.LayoutFlags="PositionProportional" 
+                 />
+            <Image
+                Source="topr.png"
+                 AbsoluteLayout.LayoutBounds="1,0,41,40"
+                 AbsoluteLayout.LayoutFlags="PositionProportional" 
+                 />
+            <Image
+                Source="butl.png"
+                 AbsoluteLayout.LayoutBounds="0,1,41,40"
+                 AbsoluteLayout.LayoutFlags="PositionProportional" 
+                 />
+            <Image
+                Source="butr.png"
+                 AbsoluteLayout.LayoutBounds="1,1,41,40"
+                 AbsoluteLayout.LayoutFlags="PositionProportional" 
+                 />
+                <HorizontalStackLayout   AbsoluteLayout.LayoutBounds="0.5,0,0.08,0.08"
+                 AbsoluteLayout.LayoutFlags="All"  Margin="0,20,0,0">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30"></ColumnDefinition>
+                            <ColumnDefinition Width="auto"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="tj.png" WidthRequest="40" HeightRequest="40" Margin="0,-7,25,0"  ></Image>
+                        <Label TextType="Text" Text="六爻排盘" FontSize="30" FontAttributes="Bold" Grid.Column="1"  />
+                    </Grid>
+                
+                
+                </HorizontalStackLayout>
+                <Line X1="0" Y1="0" X2="{Binding Source={x:Reference myFrame}, Path=Width}" Y2="0" Stroke="#d0ad9a" StrokeDashArray="2 2" StrokeThickness="1"
+                       AbsoluteLayout.LayoutBounds="0.5,0.5,0.95,0.9" Margin="0,20,0,20"
+               AbsoluteLayout.LayoutFlags="All" 
+                    />
+            
+                <Frame x:Name="myFrame" BorderColor="#d0ad9a" BackgroundColor="#fdf5e6" Padding="1"
+       CornerRadius="0"
+                       AbsoluteLayout.LayoutBounds="0.5,0.5,0.95,0.8"
+               AbsoluteLayout.LayoutFlags="All" 
+                       
+                       >
+                    <AbsoluteLayout>
+                        <Image
+                Source="bgsc.png"
+                     AbsoluteLayout.LayoutBounds="1,0,196,201"
+                 AbsoluteLayout.LayoutFlags="PositionProportional"    
+               
+                 />
+                        <Image
+                Source="mc1.png"
+                     AbsoluteLayout.LayoutBounds="0,0,22,22"
+                 AbsoluteLayout.LayoutFlags="PositionProportional"    
+               
+                 />
+                        <Image
+                Source="mc2.png"
+                     AbsoluteLayout.LayoutBounds="1,0,22,22"
+                 AbsoluteLayout.LayoutFlags="PositionProportional"    
+               
+                 />
+
+                        <Image
+                Source="mc3.png"
+                     AbsoluteLayout.LayoutBounds="0,1,22,22"
+                 AbsoluteLayout.LayoutFlags="PositionProportional"    
+               
+                 />
+                        <Image
+                Source="mc4.png"
+                     AbsoluteLayout.LayoutBounds="1,1,22,22"
+                 AbsoluteLayout.LayoutFlags="PositionProportional"    
+               
+                 />
+                        
+
+                                <Grid Margin="50,100,100,20">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="300"></RowDefinition>
+                                    <RowDefinition Height="auto"></RowDefinition>
+                                    <RowDefinition Height="auto"></RowDefinition>
+                                    <RowDefinition Height="45"></RowDefinition>
+                                </Grid.RowDefinitions>
+
+                                <Grid Grid.Row="0" Margin="0,0" RowSpacing="0" ColumnSpacing="0" HorizontalOptions="Fill">
+                                    <Grid.RowDefinitions>
+
+                                        <RowDefinition Height="45" />
+                                        <RowDefinition Height="45" />
+                                        <RowDefinition Height="45" />
+                                        <RowDefinition Height="45" />
+                                        <RowDefinition Height="45" />
+                                        <RowDefinition Height="45" />
+
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="120" />
+                                        <ColumnDefinition Width="50" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+
+                                    </Grid.ColumnDefinitions>
+                                    <Label  Grid.Column="0" Grid.Row="0" Text="姓名：" HorizontalTextAlignment="Start" TextColor="Black" FontSize="16" FontAttributes="Bold" VerticalOptions="Center" Margin="10"/>
+                                    <Entry HorizontalTextAlignment="Start" HorizontalOptions="Start" x:Name="inpzs1" WidthRequest="100" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="3" VerticalOptions="Center" Placeholder="您的江湖大名" />
+                                
+
+                                    <Label  Grid.Column="0" Grid.Row="1" Text="性别：" HorizontalTextAlignment="Start" TextColor="Black" FontSize="16" FontAttributes="Bold" VerticalOptions="Center" Margin="10"/>
+                                   
+                                    <RadioButton Content="男"  Grid.Column="1" Grid.Row="1"
+                         GroupName="Options"
+                         IsChecked="True" />
+
+                                    <RadioButton Content="男" Grid.Column="2" Grid.Row="1"
+                         GroupName="Options"
+                         IsChecked="False" />
+
+                                    <Label  Grid.Column="0" Grid.Row="2" Text="年龄：" HorizontalTextAlignment="Start" TextColor="Black" FontSize="16" FontAttributes="Bold" VerticalOptions="Center" Margin="10"/>
+                                    <Entry x:Name="inpzs3" Grid.Column="1" Grid.Row="2"  VerticalOptions="Center" Placeholder="30" />
+
+                                    <Label  Grid.Column="2" Grid.Row="2" Text="属相：" HorizontalTextAlignment="Start" TextColor="Black" FontSize="16" FontAttributes="Bold" VerticalOptions="Center" Margin="10"/>
+                                  
+                                    <Picker x:Name="myPicker" Grid.Column="3" Grid.Row="2" 
+              
+                SelectedIndexChanged="Picker_SelectedIndexChanged">
+
+                                        <Picker.ItemsSource>
+                                            <x:Array Type="{x:Type x:String}">
+                                                <x:String>鼠</x:String>
+                                                <x:String>牛</x:String>
+                                                <x:String>虎</x:String>
+                                            </x:Array>
+                                        </Picker.ItemsSource>
+                                        <Picker.SelectedIndex>0</Picker.SelectedIndex>
+                                    </Picker>
+
+
+                                    <Label  Grid.Column="0" Grid.Row="3" Text="所占何事：" HorizontalTextAlignment="Start" TextColor="Black" FontSize="16" FontAttributes="Bold" VerticalOptions="Center" Margin="10"/>
+                                    <Entry x:Name="inpzs" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="3" VerticalOptions="Center" Placeholder="把占卜的事写详细些，让卦师知道你想问何事" />
+
+                                    <Label  Grid.Column="0" Grid.Row="4" Text="起卦时间：" HorizontalTextAlignment="Start" TextColor="Black" FontSize="16" FontAttributes="Bold" VerticalOptions="Center" Margin="10"/>
+
+                                    <DatePicker   x:Name="qiGuaSj" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="3" >
+                                        <DatePicker.Format>yyyy-MM-dd</DatePicker.Format>
+                                    </DatePicker>
+                                    <Label  Grid.Column="0" Grid.Row="5" Text="起卦方式："  HorizontalTextAlignment="Start" TextColor="Black" FontSize="16" FontAttributes="Bold" VerticalOptions="Center" Margin="10"/>
+                                    <Picker Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="3"  x:Name="qiGuaFs"  SelectedIndexChanged="qiGuaFs_SelectedIndexChanged"  >
+                                    </Picker>
+
+                                </Grid>
+                                <StackLayout Grid.Row="1" x:Name="dnmnyg">
+                                    <StackLayout Orientation="Horizontal"  HorizontalOptions="Center"  VerticalOptions="Center" >
+                                        <ImageButton  Source="yao0.png" Clicked="Button3_Clicked"   Margin="10" x:Name="img1" BackgroundColor="#fdf5e6" />
+                                        <ImageButton  Source="yao1.png" Clicked="Button3_Clicked"  Margin="10" x:Name="img2" BackgroundColor="#fdf5e6"/>
+                                        <ImageButton  Source="Yao0.png" Clicked="Button3_Clicked"  Margin="10" x:Name="img3" BackgroundColor="#fdf5e6"/>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Vertical" Margin="0,0,0,0" HorizontalOptions="Center" >
+                                        <Label Text="集中精力想所占之事，点铜钱开始，再点结束，共6次"  FontSize="15" TextColor="Red" HorizontalOptions="Center" />
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                                            <Label Text="开始第：" FontSize="Body" x:Name="be"  />
+                                            <Label Text="1"  TextColor="Red" x:Name="zz"/>
+                                            <Label Text="次" FontSize="Body" x:Name="zzz"></Label>
+                                        </StackLayout>
+
+                                    </StackLayout>
+                                </StackLayout>
+
+                                <StackLayout  Grid.Row="2" x:Name="sdzd" IsVisible="false" Margin="20,0,0,0" Orientation="Vertical">
+                                    <Grid RowSpacing="0">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="40" />
+                                            <RowDefinition Height="40" />
+                                            <RowDefinition Height="40" />
+                                            <RowDefinition Height="40" />
+                                            <RowDefinition Height="40" />
+                                            <RowDefinition Height="40" />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="45" />
+                                            <ColumnDefinition Width="400" />
+                                        </Grid.ColumnDefinitions>
+                                        <Label Text="上爻" Grid.Column="0" Grid.Row="0" HorizontalTextAlignment="Start" TextColor="Black" FontSize="16" FontAttributes="Bold" VerticalOptions="Center"></Label>
+                                        <Picker Grid.Column="1" VerticalTextAlignment="Center" WidthRequest="400" x:Name="pickerYao6" SelectedIndexChanged="pickerYao6_SelectedIndexChanged" />
+                                        <Label Text="五爻" Grid.Column="0" Grid.Row="1" HorizontalTextAlignment="Start" TextColor="Black" FontSize="16" FontAttributes="Bold" VerticalOptions="Center"></Label>
+                                        <Picker Grid.Column="1"  Grid.Row="1" x:Name="pickerYao5" WidthRequest="400" SelectedIndexChanged="pickerYao5_SelectedIndexChanged"/>
+                                        <Label Text="四爻" Grid.Column="0" Grid.Row="2" HorizontalTextAlignment="Start" TextColor="Black" FontSize="16" FontAttributes="Bold" VerticalOptions="Center"></Label>
+                                        <Picker Grid.Column="1"  Grid.Row="2" x:Name="pickerYao4" WidthRequest="400" SelectedIndexChanged="pickerYao4_SelectedIndexChanged"/>
+                                        <Label Text="三爻" Grid.Column="0" Grid.Row="3" HorizontalTextAlignment="Start" TextColor="Black" FontSize="16" FontAttributes="Bold" VerticalOptions="Center"></Label>
+                                        <Picker Grid.Column="1"  Grid.Row="3" x:Name="pickerYao3" WidthRequest="400" SelectedIndexChanged="pickerYao3_SelectedIndexChanged"/>
+                                        <Label Text="二爻" Grid.Column="0" Grid.Row="4" HorizontalTextAlignment="Start" TextColor="Black" FontSize="16" FontAttributes="Bold" VerticalOptions="Center"></Label>
+                                        <Picker Grid.Column="1"  Grid.Row="4" x:Name="pickerYao2" WidthRequest="400" SelectedIndexChanged="pickerYao2_SelectedIndexChanged"/>
+                                        <Label Text="初爻" Grid.Column="0" Grid.Row="5" HorizontalTextAlignment="Start" TextColor="Black" FontSize="16" FontAttributes="Bold" VerticalOptions="Center"></Label>
+                                        <Picker Grid.Column="1"   Grid.Row="5" x:Name="pickerYao1" WidthRequest="400" SelectedIndexChanged="pickerYao1_SelectedIndexChanged" />
+
+
+
+
+
+
+                                    </Grid>
+
+                                </StackLayout>
+                                <StackLayout Grid.Row="3" Orientation="Horizontal"  VerticalOptions="Start" Margin="0,0,0,0"  >
+                                    <Grid  HorizontalOptions="CenterAndExpand">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="45" />
+                                            <RowDefinition Height="1" />
+                                            <RowDefinition Height="40" />
+                                            <RowDefinition Height="200" />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="20" />
+                                            <ColumnDefinition Width="120" />
+                                            <ColumnDefinition Width="20" />
+                                            <ColumnDefinition Width="120" />
+                                        </Grid.ColumnDefinitions>
+                                        <Button Text="重排" Grid.Column="1"   VerticalOptions="Center"  x:Name="Button1"  TextColor="Black" FontSize="20" FontAttributes="Bold" CornerRadius="10" BackgroundColor="#FF991E"  />
+
+                                        <Button Text="排盘"  Grid.Column="3"  VerticalOptions="End" Clicked="Button2_Clicked" x:Name="Butppan" TextColor="Black" FontSize="20" FontAttributes="Bold"    CornerRadius="10" BackgroundColor="#FF991E" IsVisible="false" />
+
+
+                                    </Grid>
+
+
+                                </StackLayout>
+
+
+
+                                </Grid>
+
+
+                            
+                        
+                    </AbsoluteLayout>
+                </Frame>
+            </AbsoluteLayout>
+
+           
+
+
+        </Frame>
+  
+    </ScrollView>
+        </ContentPage.Content>
+ 
+</ContentPage>
