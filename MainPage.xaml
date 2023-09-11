@@ -119,10 +119,11 @@
                                         <ColumnDefinition Width="*" />
 
                                     </Grid.ColumnDefinitions>
+                                    <StackLayout x:Name="MyStackLayout">
                                     <Label  Grid.Column="0" Grid.Row="0" Text="姓名：" HorizontalTextAlignment="Start" TextColor="Black" FontSize="16" FontAttributes="Bold" VerticalOptions="Center" Margin="10"/>
                                     <Entry HorizontalTextAlignment="Start" HorizontalOptions="Start" x:Name="inpzs1" WidthRequest="100" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="3" VerticalOptions="Center" Placeholder="您的江湖大名" />
-                                
 
+                                    </StackLayout>
                                     <Label  Grid.Column="0" Grid.Row="1" Text="性别：" HorizontalTextAlignment="Start" TextColor="Black" FontSize="16" FontAttributes="Bold" VerticalOptions="Center" Margin="10"/>
                                    
                                     <RadioButton Content="男"  Grid.Column="1" Grid.Row="1"

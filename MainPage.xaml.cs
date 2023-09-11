@@ -1,4 +1,5 @@
-﻿using App6Yao.Models;
+﻿
+using App6Yao.Models;
 using Newtonsoft.Json;
 using System.Collections.ObjectModel;
 
@@ -44,8 +45,55 @@ public partial class MainPage : ContentPage
             qiGuaFs.ItemsSource = Items;
             qiGuaFs.SelectedIndex = 0; // 默认选中 John
            UserLongGettocken();
-           
 
+            var panGesture = new PanGestureRecognizer();
+            panGesture.PanUpdated += OnPanUpdated;
+            MyStackLayout.GestureRecognizers.Add(panGesture);
+
+
+            //btnMin.Click += (s, e) => { this.WindowState = WindowState.Minimized; };
+            //btnMax.Click += (s, e) =>
+            //{
+            //    if (this.WindowState == WindowState.Maximized)
+            //        this.WindowState = WindowState.Normal;
+            //    else
+            //        this.WindowState = WindowState.Maximized;
+            //};
+            //btnClose.Click += async (s, e) =>
+            //{
+            //    var dialogResult = await dialogHostService.Question("温馨提示", "确认退出系统?");
+            //    if (dialogResult.Result != Prism.Services.Dialogs.ButtonResult.OK) return;
+            //    this.Close();
+            //};
+            //ColorZone.MouseMove += (s, e) =>
+            //{
+            //    if (e.LeftButton == MouseButtonState.Pressed)
+            //        this.DragMove();
+            //};
+
+            //ColorZone.MouseDoubleClick += (s, e) =>
+            //{
+            //    if (this.WindowState == WindowState.Normal)
+            //        this.WindowState = WindowState.Maximized;
+            //    else
+            //        this.WindowState = WindowState.Normal;
+            //};
+
+        }
+        double x, y;
+        void OnPanUpdated(object sender, PanUpdatedEventArgs e)
+        {
+            switch (e.StatusType)
+            {
+                case GestureStatus.Started:
+                    x = Content.TranslationX;
+                    y = Content.TranslationY;
+                    break;
+                case GestureStatus.Running:
+                    Content.TranslationX = x + e.TotalX;
+                    Content.TranslationY = y + e.TotalY;
+                    break;
+            }
         }
         public async Task<bool> UserLongGettocken()
         {
